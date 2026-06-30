@@ -1,43 +1,43 @@
-# Ranking Smash Ultimate — Nouvelle-Aquitaine
+# Smash Ultimate Ranking — Nouvelle-Aquitaine
 
-Projet en 2 parties bien séparées :
-- **back/** (`src/`) : API Java Spring Boot qui interroge l'API GraphQL de start.gg et expose un endpoint REST `/api/ranking`.
-- **front/** (`webpage/`) : site statique HTML/CSS/JS qui fait un `fetch()` vers cette API et affiche le classement.
+Project split into 2 clearly separated parts:
+- **back/** (`src/`): Java Spring Boot API that queries start.gg's GraphQL API and exposes a REST endpoint `/api/ranking`.
+- **front/** (`webpage/`): static HTML/CSS/JS site that does a `fetch()` to this API and displays the rankings.
 
-## 1. Configurer son token start.gg
+## 1. Configure your start.gg token
 
-1. Va sur https://start.gg/admin/profile/developer et génère un token personnel.
-2. Lance ton back avec la variable d'environnement :
+1. Go to https://start.gg/admin/profile/developer and generate a personal token.
+2. Launch your backend with the environment variable:
    ```bash
-   export STARTGG_TOKEN=ton_token_ici
+   export STARTGG_TOKEN=your_token_here
    ```
-   (ou modifie directement `src/main/resources/application.yml`, mais ne le commit jamais avec ton vrai token dedans).
+   (or edit `src/main/resources/application.yml` directly, but never commit it with your real token inside).
 
-## 2. Lancer le back
+## 2. Run the backend
 
 ```bash
 cd smash-na-ranking
 mvn spring-boot:run
 ```
 
-L'API sera disponible sur `http://localhost:8080/api/ranking`.
+The API will be available at `http://localhost:8080/api/ranking`.
 
-Teste directement dans le navigateur ou avec curl :
+Test it directly in your browser or with curl:
 ```bash
 curl http://localhost:8080/api/ranking
 ```
 
-## 3. Lancer le front
+## 3. Run the frontend
 
-Le plus simple : ouvre `webpage/index.html` directement dans ton navigateur,
-ou sers-le avec un petit serveur statique pour éviter les soucis de CORS/file://:
+The simplest way: open `webpage/index.html` directly in your browser,
+or serve it with a small static server to avoid CORS/file:// issues:
 
 ```bash
 cd webpage
 python3 -m http.server 5500
 ```
 
-Puis va sur `http://localhost:5500`.
+Then go to `http://localhost:5500`.
 
 
 ## Structure
@@ -48,8 +48,8 @@ smash-na-ranking/
 ├── src/main/java/com/smashranking/api/
 │   ├── SmashRankingApplication.java
 │   ├── config/WebConfig.java          # CORS
-│   ├── service/StartGgClient.java     # Appels GraphQL bruts
-│   ├── service/RankingService.java    # Logique métier / agrégation
+│   ├── service/StartGgClient.java     # Raw GraphQL calls
+│   ├── service/RankingService.java    # Business logic / aggregation
 │   ├── model/PlayerRanking.java
 │   └── controller/RankingController.java
 ├── src/main/resources/application.yml
