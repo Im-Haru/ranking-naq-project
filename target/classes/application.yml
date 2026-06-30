@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    async:
+      request-timeout: 300000
+startgg:
+  api-token: 5f872c5a01d0b82f523120ab48262f91
+  api-url: https://api.start.gg/gql/alpha

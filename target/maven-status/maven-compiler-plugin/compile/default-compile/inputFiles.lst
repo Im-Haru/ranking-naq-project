@@ -1,0 +1,6 @@
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/SmashRankingApplication.java
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/config/WebConfig.java
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/controller/RankingController.java
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/model/PlayerRanking.java
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/service/RankingService.java
+/home/haru/Documents/Projets/Ranking/smash-na-ranking/src/main/java/com/smashranking/api/service/StartGgClient.java

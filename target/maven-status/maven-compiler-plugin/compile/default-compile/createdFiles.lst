@@ -1,0 +1,6 @@
+com/smashranking/api/SmashRankingApplication.class
+com/smashranking/api/model/PlayerRanking.class
+com/smashranking/api/controller/RankingController.class
+com/smashranking/api/service/StartGgClient.class
+com/smashranking/api/service/RankingService.class
+com/smashranking/api/config/WebConfig.class
