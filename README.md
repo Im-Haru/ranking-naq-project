@@ -2,7 +2,7 @@
 
 Project split into 2 clearly separated parts:
 - **back/** (`src/`): Java Spring Boot API that queries start.gg's GraphQL API and exposes a REST endpoint `/api/ranking`.
-- **front/** (`webpage/`): static HTML/CSS/JS site that does a `fetch()` to this API and displays the rankings.
+- **front/** (`docs/`): static HTML/CSS/JS site that does a `fetch()` to this API and displays the rankings.
 
 ## 1. Configure your start.gg token
 
@@ -29,11 +29,11 @@ curl http://localhost:8080/api/ranking
 
 ## 3. Run the frontend
 
-The simplest way: open `webpage/index.html` directly in your browser,
+The simplest way: open `docs/index.html` directly in your browser,
 or serve it with a small static server to avoid CORS/file:// issues:
 
 ```bash
-cd webpage
+cd docs
 python3 -m http.server 5500
 ```
 
@@ -53,7 +53,7 @@ smash-na-ranking/
 │   ├── model/PlayerRanking.java
 │   └── controller/RankingController.java
 ├── src/main/resources/application.yml
-└── webpage/
+└── docs/
     ├── index.html
     ├── style.css
     └── script.js
